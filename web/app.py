@@ -7,7 +7,7 @@ app = Flask(__name__)
 HTML_FORM = """
 <!doctype html>
 <title>Dateneingabe</title>
-<h1>Neuen Eintrag hinzufügen</h1>
+<h1>Neuen Eintrag hinzufügen1</h1>
 <form action="/submit" method="post">
   <input type="text" name="name" placeholder="Name eintragen" required>
   <input type="submit" value="Absenden">
