@@ -50,7 +50,7 @@ def submit():
     conn.close()
     return 'Eintrag gespeichert! <a href="/">Zurück</a>'
 
-""" 
+
 @app.route('/data', methods=['POST'])
 def insert_data():
     content = request.json
@@ -71,4 +71,4 @@ def get_data():
     rows = cursor.fetchall()
     cursor.close()
     conn.close()
-    return jsonify(rows) """
+    return jsonify(rows)
