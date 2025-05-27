@@ -3,7 +3,7 @@ name: Build and Push Docker Images
 on:
   push:
     branches:
-      - main  # oder 'master', je nach deinem Branch-Namen
+      - main
 
 jobs:
   build:
@@ -26,7 +26,8 @@ jobs:
         docker build -t ghcr.io/$REPO_OWNER/ass3-web-web:latest ./web
         docker push ghcr.io/$REPO_OWNER/ass3-web-web:latest
 
-    - name: Build and push db image (optional)
+    - name: Build and push db image
       run: |
         REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        docker build -t ghcr.io/$REPO_OWNER/ass3-web-db:latest ./db || echo "Kein eigener DB-Dockerfile nötig"
+        docker build -t ghcr.io/$REPO_OWNER/ass3-web-db:latest ./db
+        docker push ghcr.io/$REPO_OWNER/ass3-web-db:latest
